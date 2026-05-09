@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource>
+    <file>icons/settings.svg</file>
+    <file>icons/export.svg</file>
+    <file>icons/logout.svg</file>
+</qresource>
+</RCC>
