@@ -9,7 +9,7 @@ C# .NET Veritabanı (SQL) Windows Forms
 - **Dinamik Oda Takibi:** Odaların doluluk oranları, kalan boş yatak kapasiteleri ve öğrencilerin odalara interaktif olarak atanması.
 - **Finansal İşlemler (Aidat Takibi):** Öğrenci taksit ödemeleri, geciken ödemelerin tespiti ve makbuz/ödeme kayıtlarının tutulması.
 - **Personel Modülü:** Yurtta görevli personelin (güvenlik, temizlik, idari vb.) kayıtlarının ve iletişim bilgilerinin yönetimi.
-- **Modern ve Temiz Arayüz:** Kullanıcı deneyimini (UX) merkeze alan, yüksek kontrastlı ve okunaklı, profesyonel masaüstü tasarımı.
+- **Modern ve Temiz Arayüz:** Kullanıcı deneyimini (UX) merkeze alan, yüksek kontrastlı ve okunaklı, profesyonel masaüstü tasarım.
 - **Rol Tabanlı Erişim:** Yönetici ve yetkilendirilmiş personel için güvenli giriş (Login) sistemi.
 
 ## 🧠 Modüller ve Katkıda Bulunanlar
