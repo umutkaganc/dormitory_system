@@ -1,0 +1,8 @@
+# Private Dormitory Tracking System - Gereksinimler
+# Python 3.13+ ile uyumludur
+
+# GUI Framework
+PySide6==6.10.1
+
+# Not: sqlite3, hashlib, re, os, sys, datetime modülleri
+# Python standart kütüphanesine dahildir, ayrıca kurulum gerektirmez.
