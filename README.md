@@ -2,7 +2,7 @@
 
 Bu proje, özel öğrenci yurtlarındaki zaman alan kayıt, ödeme, oda tahsisi ve personel yönetimi süreçlerini dijitalleştirip otomatize etmek amacıyla geliştirilmiş kapsamlı bir görsel programlama projesidir. Modern ve kullanıcı dostu bir arayüz üzerinden yurt yöneticilerine anlık veri takibi ve kolay yönetim imkanı sunar.
 
-C# .NET Veritabanı (SQL) Windows Forms 
+Python PySide6 SQLite
 
 ## 🚀 Özellikler
 - **Kapsamlı Öğrenci Yönetimi:** Öğrenci kayıt, silme, güncelleme ve TC kimlik no / isim bazlı hızlı arama işlemleri.
@@ -23,16 +23,37 @@ Proje, Görsel Programlama II dersi kapsamında geliştirilmiş olup, ekip üyel
 ## 🛠️ Kurulum
 Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
+### Gereksinimler
+- **Python 3.13+**
+- **pip** (Python paket yöneticisi)
+
+### Adım Adım Kurulum
+
 1. **Repoyu Klonlayın:**
 ```bash
 git clone https://github.com/kullaniciadi/dormitory_system.git
 cd dormitory_system
 ```
 
-2. **Gereksinimleri Kurun ve Çalıştırın:**
-- Projeyi **Visual Studio** (veya uyumlu bir IDE) ile açın.
-- Projede kullanılan Veritabanı bağlantı yolunu (Connection String) kendi bilgisayarınıza göre güncelleyin.
-- `Start` (Başlat) butonuna basarak projeyi derleyin ve çalıştırın.
+2. **Sanal Ortam Oluşturun (Önerilen):**
+```bash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+```
+
+3. **Bağımlılıkları Yükleyin:**
+```bash
+pip install -r requirements.txt
+```
+
+> `requirements.txt` dosyası projenin ihtiyaç duyduğu tek harici kütüphane olan **PySide6**'yı içermektedir.  
+> `sqlite3`, `hashlib`, `re`, `os`, `sys`, `datetime` gibi modüller Python standart kütüphanesine dahildir — ayrıca kurulum gerektirmez.
+
+4. **Uygulamayı Başlatın:**
+```bash
+python main.py
+```
 
 ## ▶️ Kullanım
 Uygulamayı başlattığınızda sistem sizi aşağıdaki süreçlerden geçirir:
@@ -49,15 +70,29 @@ Uygulamayı başlattığınızda sistem sizi aşağıdaki süreçlerden geçirir
 - Öğrencilerin aylık ödemelerini sisteme girin, kalan borçlarını hesaplayın ve finansal durumu takip edin.
 
 ## 📂 Dosya Yapısı (Özet)
-- **Forms/:** Uygulamanın görsel arayüzlerini (Giriş, Ana Ekran, Öğrenci Kayıt vb.) barındıran form dosyaları.
-- **Models/:** Veritabanı tablolarının C# nesne karşılıkları (Öğrenci, Oda, Personel sınıfları).
-- **DataAccess/:** Veritabanı bağlantı (CRUD - Ekle, Oku, Güncelle, Sil) işlemlerinin yürütüldüğü backend katmanı.
-- **Resources/:** Uygulama içerisinde kullanılan ikonlar, resimler ve tasarım materyalleri.
+```
+dormitory_system/
+├── main.py              # Uygulamanın giriş noktası
+├── database.py          # SQLite veritabanı bağlantı ve CRUD işlemleri
+├── requirements.txt     # Harici bağımlılıklar (PySide6)
+├── resources.qrc        # Qt kaynak dosyası (ikonlar vb.)
+├── resources_rc.py      # Derlenmiş Qt kaynakları
+├── models/              # Veritabanı tablo modellerinin Python sınıfları
+├── views/               # PySide6 arayüz ekranları (Giriş, Ana Ekran vb.)
+├── utils/               # Yardımcı fonksiyonlar ve araçlar
+├── icons/               # Uygulama içi ikon dosyaları
+└── dormitory.db         # SQLite veritabanı dosyası (çalışma zamanında oluşur)
+```
 
 ## 🔬 Proje Geliştirme Süreci
 Proje, yazılım mühendisliği prensiplerine uygun olarak modüler bir mimariyle geliştirilmiştir. Veri güvenliği ve programın çökmeden (Exception Handling) stabil çalışması ön planda tutulmuştur.
 
 ## 🆕 Son Güncellemeler
+**Versiyon 2.0 - Haziran 2026**
+- ✅ Proje **C# .NET / SQL Server** altyapısından **Python / PySide6 / SQLite** altyapısına taşındı.
+- ✅ `requirements.txt` eklenerek bağımlılık yönetimi standart hale getirildi.
+- ✅ Veritabanı kurulumu artık tamamen otomatik; harici bir sunucu bağlantısı gerekmez.
+
 **Versiyon 1.0 - Mayıs 2026**
 - ✅ Öğrenci kayıt tablolarındaki kontrast ve renk sorunları giderilerek yüksek erişilebilirlik (Accessibility) sağlandı.
 - ✅ TC Kimlik No gibi kritik veriler için 11 haneli doğrulama (Validation) mekanizmaları eklendi.
