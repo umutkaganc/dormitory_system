@@ -24,10 +24,12 @@ Proje, Görsel Programlama II dersi kapsamında geliştirilmiş olup, ekip üyel
 Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
 ### Gereksinimler
-- **Python 3.13+**
-- **pip** (Python paket yöneticisi)
+- **Python 3.13+** → [python.org](https://www.python.org/downloads/) adresinden indirilebilir
+- **pip** (Python ile birlikte otomatik gelir)
 
-### Adım Adım Kurulum
+---
+
+### 🔵 Yöntem 1 — Git ile Klonlama
 
 1. **Repoyu Klonlayın:**
 ```bash
@@ -47,10 +49,38 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+4. **Uygulamayı Başlatın:**
+```bash
+python main.py
+```
+
+---
+
+### 🟢 Yöntem 2 — ZIP Dosyasından Kurulum
+
+1. **ZIP dosyasını indirin** ve bilgisayarınızda istediğiniz bir konuma çıkartın.
+
+2. **Komut İstemi (CMD) veya PowerShell'i açın** ve projenin klasörüne gidin:
+```bash
+cd C:\...\dormitory_system
+```
+> 💡 Dosya Gezgini'nde klasörü açıp adres çubuğuna `cmd` yazıp Enter'a basarak da aynı klasörde terminal açabilirsiniz.
+
+3. **Sanal Ortam Oluşturun (Önerilen):**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+4. **Bağımlılıkları Yükleyin:**
+```bash
+pip install -r requirements.txt
+```
+
 > `requirements.txt` dosyası projenin ihtiyaç duyduğu tek harici kütüphane olan **PySide6**'yı içermektedir.  
 > `sqlite3`, `hashlib`, `re`, `os`, `sys`, `datetime` gibi modüller Python standart kütüphanesine dahildir — ayrıca kurulum gerektirmez.
 
-4. **Uygulamayı Başlatın:**
+5. **Uygulamayı Başlatın:**
 ```bash
 python main.py
 ```
