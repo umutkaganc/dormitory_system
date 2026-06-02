@@ -1,2 +1,7 @@
 /pdf/
 /pdf_text/
+dormitory.db
+*.db
+*.sqlite
+__pycache__/
+*.pyc
