@@ -6,8 +6,25 @@ Veritabanı bağlantısı ve tablo/başlangıç verisi oluşturma.
 import sqlite3
 import hashlib
 import os
+import sys
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "dormitory.db")
+
+def _get_db_path() -> str:
+    """
+    Veritabanı yolunu belirle.
+    - PyInstaller onefile EXE: EXE'nin bulunduğu klasör (kalıcı)
+    - Normal Python çalışması: script'in bulunduğu klasör
+    """
+    if getattr(sys, "frozen", False):
+        # PyInstaller ile paketlenmiş EXE — executable'ın yanına yaz
+        base_dir = os.path.dirname(sys.executable)
+    else:
+        # Normal Python çalışması
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_dir, "dormitory.db")
+
+
+DB_PATH = _get_db_path()
 
 
 def get_connection():
@@ -146,12 +163,15 @@ def student_login(tc_no: str, password: str):
             "SELECT id, name, tc_no FROM students WHERE tc_no = ? AND password_hash IS NULL",
             (tc_no,)
         ).fetchone()
-        if row and password == tc_no:
-            # İlk girişte şifreyi kaydet
-            conn.execute(
-                "UPDATE students SET password_hash = ? WHERE tc_no = ?",
-                (pw_hash, tc_no)
-            )
-            conn.commit()
+        if row:
+            if password == tc_no:
+                # İlk girişte şifreyi kaydet
+                conn.execute(
+                    "UPDATE students SET password_hash = ? WHERE tc_no = ?",
+                    (pw_hash, tc_no)
+                )
+                conn.commit()
+            else:
+                row = None
     conn.close()
     return row  # sqlite3.Row veya None

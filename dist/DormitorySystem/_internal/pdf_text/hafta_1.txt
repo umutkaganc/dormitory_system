@@ -1,0 +1,260 @@
+Görsel
+Programlama
+II
+BTS-302
+2Ara Yüz Geliştirmeye Giriş
+1. İlk Bilgisayarlar veProgram Tarihçesi
+3. Günümüzde Ara YüzGeliştirme
+4. PyQt Ortamı2. Ara yüzNedir?
+
+İlk Bilgisayarlar ve
+Program Tarihçesi
+Konular :
+oBilgisayarların Kısa Tarihi
+oProgramların Kısa Tarihi
+İlk Bilgisayarlar ve
+Programların Tarihçesi
+1.Bilgisayarların Kısa Tarihi
+Bilgisayarlar , insanların matematiksel işlemleri daha hızlıvehatasız yapmalarına
+yardımcı olmak amacıyla geliştirilmiştir . Ancak zaman içinde , yalnızca hesaplamalar
+yapmak yerine , birçok farklı alanda kullanılan güçlü cihazlar hâline gelmişlerdir .
+1642 -Pascaline: Blaise Pascal tarafından geliştirilen mekanik hesap makinesi , 
+toplama veçıkarma işlemleri yapabiliyordu .
+1801 -Delikli Kart Sistemi :Joseph Marie Jacquard, tekstil makinelerinde desenleri
+kontrol etmek içindelikli kart sistemini geliştirdi . Bu sistem daha sonra bilgisayarların
+verigirişi içinde kullanıldı .
+1837 -Analitik Makine: Charles Babbage, modern bilgisayarların temelini atan
+"Analitik Makine"yi tasarladı . Ancak , bumakine dönemin teknolojik yetersizlikleri
+nedeniyle tamamlanamadı .
+1936 -Turing Makinesi :Alan Turing, teorik olarak tüm hesaplamaları yapabilecek bir
+model olan "Turing Makinesi " fikrini ortaya attı.
+1940'lar -İlk Elektronik Bilgisayarlar :ENIAC (1946) veEDVAC gibibilgisayarlar , vakum
+tüpleri kullanarak çalışıyordu veçokbüyük boyutlardaydı .
+4
+İlk Bilgisayarlar ve
+Programların Tarihçesi
+1.Bilgisayarların Kısa Tarihi
+1970’lerde mikroişlemcilerin icadıyla birlikte , bilgisayarlar artık sadece büyük şirketler
+içindeğil , bireysel kullanım içinde uygun hâle gelmeye başladı .
+1971 -Intel 4004: İlk ticari mikroişlemci piyasaya sürüldü .
+1975 -Altair 8800: İlk kişisel bilgisayar kitlerinden biriolarak bilgisayar meraklılarına
+sunuldu .
+1981 -IBM PC: IBM’in çıkardığı kişisel bilgisayar , PC kavramının yaygınlaşmasını
+sağladı .
+1982 -Commodore 64: Geniş kitlelere hitap eden enpopüler kişisel bilgisayarlardan
+birioldu . Uygun fiyatı , gelişmiş grafik vesesyetenekleriyle özellikle oyun veev
+bilgisayarı olarak büyük ilgigördü .
+1984 -Macintosh: Apple tarafından geliştirilen bubilgisayar , grafik arayüzüyle kullanıcı
+dostu birdeneyim sundu .
+5
+İlk Bilgisayarlar ve
+Programların Tarihçesi
+2.Programların Kısa Tarihi
+1940 -1960: Donanım Odaklı veBilimsel Programlar
+Bilgisayarların ilk ortaya çıktığı dönemlerde programlama , tamamen donanımı
+yönetmek amacıyla yapılmaktaydı .
+Makine Dili (1940’lar): Bilgisayarların anlayabildiği yalnızca 0 ve1'lerden oluşan
+komutlarla programlama yapılıyordu .
+Assembly Dili (1950’ler): Makine diline göre daha anlaşılır birdilgeliştirildi , ancak hâlâ
+donanım seviyesinde çalışıyordu .
+FORTRAN (1957): Bilimsel hesaplamalar içinilk yüksek seviyeli dilolarak ortaya çıktı.
+Öne Çıkan Programlar :
+ENIAC veEDVAC içinyazılan hesaplama programları
+Delikli kartlarla çalışan işletim sistemleri
+Hedef Kullanıcı Kitlesi :
+Bilim insanları
+Mühendisler
+6
+İlk Bilgisayarlar ve
+Programların Tarihçesi
+2.Programların Kısa Tarihi
+1960 -1980: İşletme veAkademik Programlar
+Bilgisayarlar üniversitelerde vebüyük şirketlerde kullanılmaya başlanınca , işdünyasına
+veakademik alana yönelik programlar geliştirildi .
+COBOL (1960’lar): Bankacılık , sigortacılık vefinans sektöründe kullanılan işodaklı
+programlama dili.
+UNIX (1970): Çok kullanıcılı sistemler içingeliştirilen ilk işletim sistemlerinden biri.
+C Programlama Dili (1972): UNIX işletim sistemini yazmak içingeliştirildi vesistem
+yazılımlarında devrim yarattı .
+Öne Çıkan Programlar :
+Bankacılık vemuhasebe yazılımları
+Üniversitelerde kullanılan araştırma programları
+İşletim sistemleri (UNIX, CP/M)
+Hedef Kullanıcı Kitlesi :
+Büyük şirketler
+Akademisyenler
+7
+İlk Bilgisayarlar ve
+Programların Tarihçesi
+2.Programların Kısa Tarihi
+1980 -2000: Kişisel Bilgisayarlar veKullanıcı Dostu Programlar
+1980’lerden itibaren kişisel bilgisayarların (PC) yaygınlaşmasıyla yazılımlar artık daha
+geniş birkullanıcı kitlesine hitap etmeye başladı .
+A. 1980’ler: İlk Masaüstü Yazılımları veOyunlar
+MS-DOS (1981): IBM PC’lerde kullanılan komut satırı tabanlı işletim sistemi .
+Lotus 1 -2-3 (1983): İlk popüler elektronik tablo programlarından biri.
+Mac OS (1984): İlk grafik arayüzlü işletim sistemlerinden biri.
+Oyunlar (Pac -Man, Tetris, Prince of Persia, SimCity): Eğlence sektörüne yönelik
+yazılımlar ortaya çıktı.
+8
+İlk Bilgisayarlar ve
+Programların Tarihçesi
+2.Programların Kısa Tarihi
+B. 1990’lar: Grafik Arayüzlü Uygulamalar veİnternetin Yaygınlaşması
+Windows 95 (1995): İlk geniş çaplı grafik kullanıcı arayüzüne sahip işletim sistemi .
+Microsoft Office (1990’lar): Word, Excel vePowerPoint ileofisyazılımlarında devrim
+yaptı .
+İnternet Tarayıcıları (Netscape, Internet Explorer): Web sitelerine erişim sağlandı , 
+internet kullanımı yaygınlaştı .
+Photoshop (1990): Dijital grafik düzenleme araçları geliştirildi .
+Öne Çıkan Programlar :
+Grafik arayüzlü işletim sistemleri (Windows, Mac OS)
+Ofisprogramları (Microsoft Office, Lotus Notes)
+Eğlence yazılımları (oyunlar , medya oynatıcılar )
+Hedef Kullanıcı Kitlesi :
+İşletmeler vebireysel kullanıcılar
+Öğrenciler veakademisyenler
+ 9
+İlk Bilgisayarlar ve
+Programların Tarihçesi
+2.Programların Kısa Tarihi
+2000’ler veSonrası : Genel Kullanıcıya Yönelik Programlama
+2000’li yıllara gelindiğinde bilgisayarlar artık sadece işdünyası veya akademik
+çalışmalar içindeğil , her yaştan insanın günlük hayatında kullandığı araçlar hâline
+geldi .
+A. Kullanıcı Dostu Yazılımlar
+Windows XP (2001) vemacOS X (2001): Kullanıcı dostu arayüzleriyle büyük kitlelere
+hitap etti.
+Akıllı Telefon Uygulamaları (2007 sonrası ):Mobil işletim sistemleri (iOS, Android) 
+geliştirildi vemobil uygulamalar yaygınlaştı .
+Bulut Tabanlı Yazılımlar (2010’lar): Google Docs, Dropbox gibiçevrimiçi servisler , 
+yazılımların masaüstü bağımlılığını azalttı .
+Sosyal Medya Platformları (Facebook, Twitter, Instagram): Yazılımlar artık sadece iş
+içindeğil , sosyal bağlantılar kurmak içinde kullanılır hâle geldi .
+10
+İlk Bilgisayarlar ve
+Programların Tarihçesi
+2.Programların Kısa Tarihi
+B. Programlamanın Yaygınlaşması
+Kod Yazmadan Yazılım Geliştirme :No-code velow-code platformları (Wix, Bubble) 
+sayesinde herkes kolayca yazılım geliştirebilir hâle geldi .
+Öğrenmesi Kolay Diller (Python, JavaScript): Programlama artık sadece
+profesyoneller içindeğil , öğrenciler veamatör geliştiriciler içinde erişilebilir hâle geldi .
+Öne Çıkan Programlar :
+Web tabanlı servisler (Google Drive, Zoom, Netflix)
+Mobil uygulamalar (WhatsApp, TikTok)
+Oyun motorları (Unity, Unreal Engine)
+Hedef Kullanıcı Kitlesi :
+Genel halk (bilgisayar kullanma bilgisi olmayan kişiler bile yazılım kullanabilir )
+Küçük işletmeler (web sitesi , sosyal medya yönetimi gibiaraçlar yaygınlaştı )
+Genç nesil (oyunlar , sosyal medya , mobil uygulamalar )
+11
+Ara Yüz Nedir?
+Konular :
+oAra YüzÇeşitleri
+oKullanıcı Ara Yüzleri
+Ara Yüz Nedir?
+Bilgisayarda arayüz (interface) , ikiveya daha fazla bileşenin bilgi alışverişinde
+bulunduğu ortak birsınırdır . Bu değişim , yazılım , donanım , çevre birimleri , insanlar
+veya bunların kombinasyonları arasında gerçekleşebilir . Günlük hayatta da birçok
+arayüz örneği bulunur . Örneğin , birATM cihazı , kullanıcı ilebanka sistemi arasında bir
+arayüzdür ; kişiekrana dokunarak işlem yapar , cihaz isebanka sistemine bağlanarak
+gerekli işlemi gerçekleştirir .
+Donanım Arayüzleri
+USB Bağlantıları :Bir telefonun şarjolması veya birklavyenin bilgisayara bağlanması
+içinUSB portları kullanılır . 
+HDMI Kablo :Bir televizyona veya projektöre görüntü aktarmak içinkullanılan HDMI 
+kablosu , bilgisayar ileekran arasındaki görüntü verisini ileten birdonanım arayüzüdür .
+Yazılım Arayüzleri
+Mobil Uygulamalar :Bir yemek siparişi uygulamasında , kullanıcı siparişi verir, uygulama
+restoranın sistemine bağlanır vesiparişin durumunu takip eder . Burada yazılım
+arayüzü , uygulama ilerestoran sistemini birbirine bağlar .
+Web Tarayıcıları :Arama motorları , kullanıcıdan aldığı sorguyu sunucuya iletir vegelen
+sonuçları kullanıcıya gösterir . Web tarayıcıları , internet ilekullanıcı arasındaki bir
+yazılım arayüzü görevi görür .
+13
+Ara Yüz Nedir?
+Kullanıcı Ara Yüzleri
+Komut Satırı Arayüzü (CLI -Command Line Interface)
+Kullanıcılar , yazılı komutlar aracılığıyla sistemi kontrol eder .
+Örnek: Linux Terminali , Windows Komut İstemi (CMD).
+Avantajı :Hafif vehızlıdır .
+Dezavantajı :Yeni kullanıcılar içinöğrenmesi zorolabilir .
+Görsel Kullanıcı Arayüzü (GUI -Graphical User Interface)
+Kullanıcılar , düğmeler , menüler vesimgeler aracılığıyla bilgisayarı kontrol eder .
+Örnek: Windows, macOS, Android, iOS işletim sistemleri .
+Avantajı :Kullanımı kolaydır .
+Dezavantajı :Daha fazla sistem kaynağı tüketir .
+14
+Günümüzde Ara Yüz
+Geliştirme
+Konular :
+oKullanılan Frameworkler
+oPython Ortamında
+Geliştirme
+Günümüzde Ara Yüz
+Geliştirme
+Günümüzde arayüz geliştirmek içinkullanılan çeşitli platformlar vearaçlar
+bulunmaktadır . Bu araçlar , yazılımcılara vetasarımcılara hem masaüstü hem de 
+mobil uygulamalar içinkullanıcı dostu veetkileşimli arayüzler oluşturma imkânı sunar .
+Yaygın Olarak Kullanılan Arayüz Geliştirme Ortamlarından Bazıları :
+Qt (PyQt , PySide ):C++ tabanlı Qt Framework, Python ( PyQt /PySide ) desteğiyle de 
+güçlü veçapraz platform (Windows, macOS, Linux) destekleyen arayüzler
+oluşturmayı sağlar .
+WPF (Windows Presentation Foundation): Microsoft’un geliştirdiği WPF, .NET tabanlı
+uygulamalar içinmodern vegörsel olarak zengin arayüzler oluşturmayı sağlar .
+JavaFX: Java tabanlı modern birgrafik arayüz kütüphanesidir , masaüstü
+uygulamaları içingelişmiş UI bileşenleri sunar .
+Flutter: Google tarafından geliştirilen Android, iOS, Windows, Mac veLinux için
+modern veperformanslı arayüzler oluşturmayı sağlayan birframework’tür .
+Electron.js: Web teknolojilerini (HTML, CSS, JavaScript) kullanarak masaüstü
+uygulamalar geliştirmek içinpopüler birframework. Visual Studio Code, Discord ve
+Slack gibiuygulamalar Electron ilegeliştirilmiştir .
+16
+Günümüzde Ara Yüz
+Geliştirme
+Python İçinYaygın Olarak Kullanılan Arayüz Geliştirme Ortamlarından Bazıları :
+Qt (PyQt , PySide ):C++ tabanlı Qt Framework, Python ( PyQt /PySide ) desteğiyle de 
+güçlü veçapraz platform (Windows, macOS, Linux) destekleyen arayüzler
+oluşturmayı sağlar .
+Tkinter :Python’un standart GUI kütüphanesidir . Hafif , basit vePython ileentegre
+geldiği içinküçük projeler içinuygundur . Ancak modern UI tasarımları içinsınırlıdır .
+Kivy:Açık kaynaklı , çokplatformlu (Windows, macOS, Linux, Android, iOS) bir
+framework’tür . Özellikle dokunmatik ekran desteği sayesinde mobil uygulamalar için
+de kullanılabilir .
+PyWebView :HTML, CSS veJavaScript ilearayüz oluşturmayı sağlayan hafif bir
+kütüphanedir . Arka planda WebView kullanarak masaüstü uygulamalar geliştirilmesini
+sağlar .
+17
+PyQt Ortamı
+Konular :
+oQt Framework
+oKullanım Alanları
+Günümüzde Ara Yüz
+Geliştirme
+Derslerimizde dönem boyunca Qt framework anlatılacaktır . Qt framework'ün
+tercihedlimesinin sebepleri :
+Çok Platformlu :Tek birkod tabanı ileWindows, Linux, macOS, Android veiOS için
+uygulama geliştirilebilir .
+Görsel Arayüz Geliştirme :Qt Designer veya Qt Creator kullanarak sürükle -bırak
+yöntemiyle kolayca arayüz tasarlanabilir .
+Performans :C++ tabanlı olduğu içinhızlıveoptimize çalışır .
+Geniş Bileşen Desteği :Butonlar , pencereler , tablolar , grafikler , medya oynatıcılar gibi
+birçok hazır bileşen sunar .
+Qt Geliştirme Ortamları
+Qtilegeliştirme yapmak içinşuaraçlar kullanılabilir :
+Qt Creator: Qt'nin resmi IDE’sidir . C++, Python veQML ilegelişmiş UI tasarlamak için
+kullanılır .
+Qt Designer: Sadece UI tasarlamak içinkullanılan sürükle -bırak yöntemiyle çalışan bir
+araçtır . PyQt vePySide ileentegre çalışır .
+19
+Günümüzde Ara Yüz
+Geliştirme
+Qt’nin Kullanım Alanları
+Masaüstü uygulamalar :Photoshop, VLC Media Player gibigelişmiş UI gerektiren
+yazılımlar .
+Gömülü sistemler :Endüstriyel cihazlar , medikal cihazlar , akıllı evsistemleri .
+Mobil uygulamalar :Android veiOS içinUI geliştirme .
+Oyunlar :UI menüleri ve2D grafik sistemleri içinkullanılır .
+Dokümantasyon : https://doc.qt.io/
+20

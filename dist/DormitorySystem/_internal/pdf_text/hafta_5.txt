@@ -1,0 +1,148 @@
+Görsel
+Programlama
+II
+BTS-302
+2Diyaloglar  ve Kullanıcı  
+Etkileşimi
+1. Dialog Nedir?
+3. Modal / non -modal pencereler  2. Dialog Çeşitleri
+
+Dialog Nedir? 
+Konular :
+oDialog Tanımı
+Dialog Nedir? 
+GUI uygulamalarında  kullanıcı  ile iletişim kurmanın  bazı yolları şunlardır :
+•Mesaj  göstermek
+•Kullanıcıdan  veri almak
+•Dosya seçtirmek
+•Onay almak
+Örnekler :
+•"Dosya başarıyla  kaydedildi "
+•"Gerçekten  silmek  istiyor  musunuz ?"
+•"Bir dosya  seçin "
+Qt bu işlemler  için hazır  dialog sınıfları  sunar .
+4
+Dialog Nedir? 
+Dialog, kullanıcıyla  kısa süreli  etkileşim  için kullanılan  küçük  pencerelerdir .
+Örnekler :
+•Dosya açma  penceresi
+•Uyarı  mesajları
+•Kullanıcıdan  veri alma
+Qt'de  dialog sınıfları :
+•QMessageBox
+•QFileDialog
+•QInputDialog
+•QDialog
+5
+Dialog Çeşitleri
+Konular :
+oQMessageBox
+oQFileInput
+oInput Dialog
+QMessageBox
+QMessageBox , kullanıcıya  bilgi, uyarı  veya  hata  mesajı  göstermek  için kullanılır .
+Örnek kullanım  alanları :
+•Bilgi mesajı
+•Hata mesajı
+•Onay isteme
+Örnek:
+from PySide6.QtWidgets import QMessageBox
+QMessageBox.information (self, "Bilgi", " İşlem  başarıyla  tamamlandı ")
+7
+QMessageBox  Türleri
+Qt'de  farklı  mesaj  tipleri  vardır :
+8Tür Kullanım
+information Bilgilendirme
+warning Uyarı
+critical Hata
+question Kullanıcıdan  onay
+QMessageBox  Örnekleri
+Bilgi mesajı :
+QMessageBox.information (self, "Bilgi", "Dosya kaydedildi ")
+Uyarı  mesajı :
+QMessageBox.warning (self, " Uyarı ", "Bu alan  boş bırakılamaz ")
+Hata mesajı :
+QMessageBox.critical (self, "Hata", "Dosya açılamadı ")
+9
+Kullanıcıdan  Onay Alma
+result = QMessageBox.question (
+ self,
+ "Onay",
+ "Dosyayı  silmek  istiyor  musunuz ?"
+)
+if result == QMessageBox.Yes :
+ print("Silme işlemi  yapılıyor ")
+Bu yöntem  tehlikeli  işlemler  için önemlidir .
+10
+QFileD ialog
+QFileDialog , kullanıcıya  dosya  seçtirmek  için kullanılır .
+Kullanım  alanları :
+•Dosya açma
+•Dosya kaydetme
+•Klasör  seçme
+11
+Dosya Açma  Dialogu
+from PySide6.QtWidgets import QFileDialog
+file_name , _ = QFileDialog.getOpenFileName (
+ self,
+ "Dosya Aç",
+ "",
+ "Text Files (*.txt)"
+)
+print( file_name )
+12
+
+Dosya Kaydetme  Dialogu
+file_name , _ = QFileDialog.getSaveFileName (
+ self,
+ "Dosya Kaydet ",
+ "",
+ "Text Files (*.txt)"
+)
+13
+QInputDialog
+QInputDialog , kullanıcıdan  basit  veri almak  için kullanılır .
+Örnek:
+•Kullanıcı  adı
+•Sayı girişi
+•Metin girişi
+14
+Input Dialog Örneği
+from PySide6.QtWidgets import QInputDialog
+text, ok = QInputDialog.getText (
+ self,
+ "İsim",
+ "Adınızı  girin:"
+)
+if ok:
+ print(text)
+15
+Modal ve
+Non -Modal 
+Pencereler
+Konular :
+oModal ve Non-Modal 
+Pencere  Tanımlar ı
+Modal ve Non -Modal 
+Pencereler
+GUI'de  iki tür pencere  vardır .
+Modal
+Kullanıcı  önce  bu pencereyi  kapatmalıdır . Kapatılmadan  ana pencere  kullanılamaz .
+Örnek:
+•Dosya açma
+•Uyarı  mesajları
+Non-Modal
+Kapatılmadan  ana pencere  kullanılmaya  devam  edebilir .
+Örnek:
+•Araç  pencereleri
+•Yardım pencereleri
+17
+Modal ve Non -Modal 
+Pencereler
+Modal Pencere  Örneği
+dialog.exec ()
+Program dialog kapanana  kadar  bekler .
+Non-Modal Pencere  Örneği
+dialog.show ()
+Program çalışmaya  devam  eder .
+18

@@ -1,0 +1,91 @@
+Görsel
+Programlama
+II
+BTS-302
+2Düzen Yönetimi
+1. Layoutlar
+2. Boşluk Elementleri
+
+Layoutlar
+Konular :
+oLayout Nedir?
+oQHBoxLayout , 
+QVBoxLayout , 
+QGridLayout , 
+QFormLayout , Layoutları
+Layoutlar
+1.Layout Nedir?
+Layout ( Düzen ), birgrafik kullanıcı arayüzünde widgetların nasıl yerleştirileceğini ve
+düzenleneceğini belirleyen biryapıdır . Kullanıcı arayüzü tasarımında düzen , 
+bileşenlerin görsel hiyerarşisini vekullanıcı deneyimini etkileyen önemli birunsurdur .
+Temel Özellikler
+Bileşen Yerleşimi :Layout, butonlar , metin kutuları , etiketler gibibileşenlerin ekranda
+nasıl konumlandırılacağını belirler .
+Esneklik :Layoutlar , pencere boyutu değiştiğinde bileşenlerin otomatik olarak yeniden
+boyutlandırılmasını veyeniden düzenlenmesini sağlar . Bu, uygulamanın farklı ekran
+boyutlarına uyum sağlamasına yardımcı olur.
+4
+Layoutlar
+2.QHBoxLayout, QVBoxLayout , QGridLayout , QFormLayout layoutları
+QHBoxLayout
+Tanım :QHBoxLayout , bileşenleri yatay olarak yan yana yerleştiren birdüzen
+yöneticisidir .
+Kullanım :Bu düzen yöneticisi , bileşenlerin soldan sağa doğru sıralanmasını sağlar . 
+Örneğin , birdizi buton veya etiketin yan yana görünmesi gerektiğinde kullanılır .
+QVBoxLayout
+Tanım :QVBoxLayout , bileşenleri dikey olarak üstüste yerleştiren birdüzen yöneticisidir .
+Kullanım :Bu düzen yöneticisi , bileşenlerin üstten alta doğru sıralanmasını sağlar . 
+Örneğin , birformda etiketler vegirişalanlarının dikey olarak yerleştirilmesi
+gerektiğinde kullanılır .
+5
+Layoutlar
+2.QHBoxLayout, QVBoxLayout , QGridLayout , QFormLayout layoutları
+QGridLayout
+Tanım :QGridLayout , bileşenleri birızgara düzeninde yerleştiren birdüzen yöneticisidir .
+Kullanım :Bu düzen yöneticisi , bileşenlerin satır vesütunlar halinde düzenlenmesini
+sağlar . Özellikle karmaşık formlar veya tablolar içinidealdir .
+QFormLayout
+Tanım :QFormLayout , etiketler vegirişalanları içindüzenli birform görünümü sağlayan
+birdüzen yöneticisidir .
+Kullanım :Bu düzen yöneticisi , her biretiketin yanına birgirişalanı yerleştirerek form 
+oluşturmak içinidealdir . Kullanıcıdan bilgi toplamak içinsıkça kullanılır .
+6
+Layoutlar
+2.QHBoxLayout, QVBoxLayout , QGridLayout , QFormLayout layoutları
+Verilen layoutların hepsi Qt Creator " Design " sekmesinde bulunmaktadır . Sol üst
+tarafra bulunan "Layouts " kısmından hepsi ilearayüztasarımları gerçekleştirilebilir .
+7
+Boşluk Elementi
+Konular :
+oBoşluk Elementi Nedir?
+oQSpacerItem
+Boşluk Elementi
+1.Boşluk Elementi Nedir?
+Spacer ( boşluk ) öğeleri , kullanıcı arayüzünde bileşenler arasında esnek boşluklar
+oluşturmak içinkullanılır . Bu, arayüzün daha düzenli veestetik görünmesini sağlar . 
+Aşağıda , spacer öğelerinin ne olduğu , nasıl kullanıldığı veörneklerle açıklamaları
+bulunmaktadır .
+Spacer Öğeleri Nedir?
+Spacer öğeleri , birdüzen yöneticisi içinde boşluk oluşturmak içinkullanılan özel
+bileşenlerdir . Bu öğeler , bileşenler arasında esnek biralan oluşturarak , arayüzdeki
+bileşenlerin konumunu vehizalamasını kontrol etmeye yardımcı olur. Spacer öğeleri , 
+genellikle aşağıdaki durumlarda kullanılır :
+•Bileşenler arasında belirli birboşluk bırakmak .
+•Bileşenlerin belirli birhizalamaya sahip olmasını sağlamak .
+•Arayüzün daha dengeli vedüzenli görünmesini sağlamak .
+9
+Boşluk Elementi
+2.QSpacerItem
+PyQt'de spacer öğeleri , QSpacerItem sınıfı kullanılarak oluşturulur . Bu öğeler , yatay
+veya dikey olarak yerleştirilebilir veboyutları ayarlanabilir .
+1. Yatay Spacer
+Yatay birspacer, bileşenler arasında yatay boşluk oluşturur .
+2. Dikey Spacer
+Dikey birspacer, bileşenler arasında dikey boşluk oluşturur .
+Spacer Öğelerinin Özellikleri
+Boyut :Spacer öğelerinin boyutları ,QSpacerItem oluşturulurken belirlenir . İlk iki
+parametre , genişlik veyükseklik değerleridir .
+Hizalama :Spacer öğeleri ,QSizePolicy kullanılarak
+hizalanabilir .QSizePolicy.Expanding , boşluğun mevcut alanı doldurmasına izin
+verirken ,QSizePolicy.Minimum iseminimum boyutta kalmasını sağlar .
+10

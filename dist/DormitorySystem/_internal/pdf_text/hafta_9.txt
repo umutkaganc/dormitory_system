@@ -1,0 +1,106 @@
+Görsel
+Programlama
+II
+BTS-302
+2Çoklu  Pencereler
+1. Çoklu  Pencereler  Nedir?
+3. Örnekler
+4. Dikkat  Edilmesi  Gerekenler2. QDialog  ve QWidget
+
+Çoklu  Pencereler  
+Nedir?
+Konular :
+oÇoklu  Pencereler  Tanımı
+oQt’de Pencere  Mantığı
+Çoklu Pencere Nedir?
+Gerçek  hayattaki  uygulamaların  çoğu  tek bir pencereden  oluşmaz . 
+Ayarlar , giriş ekranı  veya  uyarı  pencereleri  gibi farklı  amaçlar  için birden  
+fazla pencere  kullanılır .
+Örnekler :
+•Ayarlar  penceresi
+•Giriş (Login) ekranı
+•Onay (Popup) penceresi
+Bu yapıya  çoklu  pencere  (multi -window) denir .
+4
+Qt’de Pencere  Mantığı
+Qt’de her pencere  aslında  bir sınıftır .
+Pencere yapılarımız  şu şekilde  olur:
+•Ana pencere ->bir class
+•Açılan  pencere  -> başka  bir class
+Bu sayede :
+•Kod daha  düzenli  olur
+•Her pencere  bağımsız  çalışır
+5
+QWidget  ve QDialog
+Konular :
+oQWidget  Nedir?
+oQDialog  Nedir?
+QWidget  Nedir?
+QWidget , Qt’deki  tüm arayüz  elemanlarının  temel  sınıfıdır .
+Özellikler :
+•Genel amaçlı  pencere
+•Ana pencere  olarak  kullanılabilir
+•Non-modal çalışır
+7
+QDialog  Nedir?
+QDialog , kullanıcıyla  etkileşim  kurmak  için kullanılan  özel bir pencere  türüdür .
+Kullanım  alanları :
+•Ayarlar
+•Formlar
+•Uyarı  pencereleri
+Özellikler :
+•Modal olabilir
+•Kullanıcıdan  veri almak  için kullanılır
+•Genelde  kısa işlemler  içindir
+8
+Örnekler
+Konular :
+oQWidget  Kod Örneği
+oQDialog  Kod Örneği
+QWidget  Kod  Örneği
+from PySide6.QtWidgets import QApplication , QWidget , QLabel , QVBoxLayout
+class MyWindow (QWidget ):
+ def __ init__(self):
+ super().__ init__()
+ self.setWindowTitle ("QWidget  Penceresi ")
+ layout = QVBoxLayout ()
+ label = QLabel ("Bu bir QWidget  penceresi ")
+ layout.addWidget (label)
+ self.setLayout (layout)
+app = QApplication ([])
+window = MyWindow ()
+window.show ()
+app.exec ()
+10
+QDialog  Kod  Örneği
+from PySide6.QtWidgets import QDialog , QLabel , QVBoxLayout
+class MyDialog (QDialog ):
+ def __ init__(self):
+ super().__ init__()
+ self.setWindowTitle ("Dialog Penceresi ")
+ layout = QVBoxLayout ()
+ label = QLabel ("Bu bir dialog penceresi ")
+ layout.addWidget (label)
+ self.setLayout (layout)
+11
+Dikkat  Edilmesi  
+Gerekenler
+Konular :
+oexec() ve show() farkı
+oQDialog  ve QWidget  
+Farklılıkları  
+exec() ve show() farkı  
+show() ve exec() fonksiyonları  arasında ufak  bir fark vardır .
+Temel fark:
+show() -> Normal pencere  açar
+exec() -> Modal pencere  açar
+exec() kullanıldığında  kullanıcı  dialog kapanmadan  ana pencereye  geri dönemez .
+13
+QDialog  ve
+QWidget Farklılıkları  
+Özellik QWidget QDialog
+Amaç Genel Pencere Etkileşim
+Modal Olmaz Olur
+exec() Yoktur Vardır
+show() Vardır Vardır
+14

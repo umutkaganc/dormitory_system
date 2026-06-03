@@ -1,0 +1,24 @@
+=================================================
+DORMITORY SYSTEM - ÖNEMLİ BİLGİLENDİRME
+=================================================
+
+LÜTFEN UYGULAMAYI ÇALIŞTIRMADAN ÖNCE OKUYUNUZ:
+
+1) ÇALIŞTIRMA UYARISI:
+"DormitorySystem.exe" dosyası, veritabanı dosyası olan "dormitory.db" ve yanındaki diğer klasörlerle BİRLİKTE AYNI KLASÖRDE bulunmalıdır. 
+Eğer EXE dosyasını tek başına masaüstüne veya başka bir yere kopyalayıp çalıştırırsanız, veritabanını bulamayacağı için sistem düzgün çalışmayabilir veya sıfırdan boş bir veritabanı oluşturabilir. 
+Taşıma işlemi yapacaksanız, SADECE EXE'yi değil, BURADAKİ TÜM DOSYALARI bir bütün olarak kopyalayıp taşıyınız. (Veya EXE'ye sağ tıklayıp Masaüstüne Kısayol oluşturabilirsiniz.)
+
+2) VARSAYILAN GİRİŞ BİLGİLERİ (TEST İÇİN):
+
+YÖNETİCİ (Personel) GİRİŞİ:
+Kullanıcı Adı : admin
+Şifre         : admin123
+
+ÖĞRENCİ GİRİŞİ:
+TC Kimlik No  : 11111111111
+Şifre         : 11111111111  (İlk girişte şifre varsayılan olarak TC Kimlik Numarasıdır)
+
+=================================================
+Proje Dosyasıdır - İzinsiz kullanılamaz.
+=================================================

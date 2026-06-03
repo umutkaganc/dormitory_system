@@ -121,10 +121,12 @@ class LoginView(QWidget):
 
         layout.addWidget(self._label("Kullanıcı Adı"))
         self.username_input = self._input("Kullanıcı adınızı girin")
+        self.username_input.setText("admin")  # Varsayılan değer
         layout.addWidget(self.username_input)
 
         layout.addWidget(self._label("Şifre"))
         self.password_input = self._input("Şifrenizi girin", echo=True)
+        self.password_input.setText("admin123")  # Varsayılan değer
         self.password_input.returnPressed.connect(self._do_staff_login)
         layout.addWidget(self.password_input)
 
@@ -151,10 +153,12 @@ class LoginView(QWidget):
 
         layout.addWidget(self._label("TC Kimlik No"))
         self.tc_input = self._input("11 haneli TC No")
+        self.tc_input.setText("11111111111")  # Varsayılan değer
         layout.addWidget(self.tc_input)
 
         layout.addWidget(self._label("Şifre"))
         self.student_pw_input = self._input("Varsayılan: TC Kimlik No", echo=True)
+        self.student_pw_input.setText("11111111111")  # Varsayılan değer
         self.student_pw_input.returnPressed.connect(self._do_student_login)
         layout.addWidget(self.student_pw_input)
 
@@ -246,9 +250,14 @@ class LoginView(QWidget):
         if not tc or not pw:
             self.student_error.setText("TC No ve şifre gereklidir.")
             return
-        row = student_login(tc, pw)
-        if row:
-            self.student_login_success.emit(row["id"], row["name"])
-        else:
-            self.student_error.setText("TC No veya şifre hatalı! Kayıtlı öğrenci değilsiniz.")
+        try:
+            row = student_login(tc, pw)
+            if row:
+                self.student_login_success.emit(row["id"], row["name"])
+            else:
+                self.student_error.setText("TC No veya şifre hatalı! Kayıtlı öğrenci değilsiniz.")
+                self.student_pw_input.clear()
+        except Exception as e:
+            self.student_error.setText(f"Giriş hatası: {e}")
             self.student_pw_input.clear()
+

@@ -20,6 +20,17 @@ from views.student_portal import StudentPortalWindow
 
 
 def main():
+    # Global hata yakalayıcı — herhangi bir yerde sessiz crash olursa dialog göster
+    import traceback
+    from PySide6.QtWidgets import QMessageBox
+    def handle_exception(exc_type, exc_value, exc_traceback):
+        msg = ''.join(traceback.format_exception(exc_type, exc_value, exc_traceback))
+        try:
+            QMessageBox.critical(None, "Kritik Hata", f"Beklenmeyen hata oluştu:\n{msg[:800]}")
+        except Exception:
+            pass
+    sys.excepthook = handle_exception
+
     # Veritabanını başlat
     init_db()
 
@@ -117,10 +128,25 @@ def main():
 
     def on_student_login(student_id, student_name):
         """Öğrenci girişi → StudentPortalWindow aç (Hafta 9: Çoklu Pencere)."""
-        portal = StudentPortalWindow(student_id, student_name)
-        portal.show()
-        open_windows.append(portal)
-        login.close()
+        try:
+            portal = StudentPortalWindow(student_id, student_name)
+
+            def on_student_logout():
+                """Öğrenci çıkış yaptığında login ekranını yeniden göster."""
+                new_login = LoginView()
+                new_login.login_success.connect(on_staff_login)
+                new_login.student_login_success.connect(on_student_login)
+                new_login.show()
+                open_windows.append(new_login)
+
+            portal.logout_requested.connect(on_student_logout)
+            portal.show()
+            open_windows.append(portal)
+            login.close()
+        except Exception as e:
+            from PySide6.QtWidgets import QMessageBox
+            QMessageBox.critical(login, "Hata", f"Öğrenci paneli açılamadı:\n{e}")
+
 
     login.login_success.connect(on_staff_login)
     login.student_login_success.connect(on_student_login)

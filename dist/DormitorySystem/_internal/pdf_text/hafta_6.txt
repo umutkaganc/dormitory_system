@@ -1,0 +1,254 @@
+Görsel
+Programlama
+II
+BTS-302
+2Gelişmiş  Widget’lar , Girdi  
+Doğrulama  ve Temel UX
+1.Gelişmiş  Widget’lar
+3. Temel UX2. Girdi  Doğrulama
+
+Gelişmiş  Widget’lar  
+Konular :
+oQComboBox
+oQListWidget
+oQTableWidget
+oQTabWidget
+oQSlider
+oQProgressBar
+QComboBox
+QComboBox  = Açılır  seçim  listesi
+Kullanım  alanları :
+•Ülke seçimi
+•Dil seçimi
+•Kategori  seçimi
+Örnek:
+combo = QComboBox ()
+combo.addItems (["Python", "C++", "Java"])
+Kullanıcının  tek seçim  yapması  gereken  durumlarda  kullanılır .
+4
+QListWidget
+QListWidget  = Liste gösterme  widget’ı
+Kullanım  alanları :
+•Dosya listesi
+•Kullanıcı  listesi
+•Görev  listesi
+Örnek:
+list_widget  = QListWidget ()
+list_widget.addItem ("Öğe  1")
+list_widget.addItem ("Öğe  2")
+5
+QTableWidget
+QTableWidget  = Tablo gösterme  widget’ı
+Kullanım  alanları :
+•Veri tabloları
+•Öğrenci  listesi
+•Ürün  listesi
+Örnek:
+table = QTableWidget (3, 2)
+table.setItem (0, 0, QTableWidgetItem ("Ali"))
+6
+QTabWidget
+QTabWidget  = Sekmeli  arayüz
+Kullanım  alanları :
+•Ayarlar  sayfaları
+•Çoklu  içerik
+•Tarayıcı  sekmeleri
+Örnek:
+tabs = QTabWidget ()
+tabs.addTab (widget1, "Genel")
+tabs.addTab (widget2, " Ayarlar ")
+7
+QSlider
+QSlider  = Kaydırmalı  değer  seçme  aracı
+Kullanım  alanları :
+•Ses seviyesi
+•Parlaklık
+•Filtre  ayarları
+Örnek:
+slider = QSlider (Qt.Horizontal )
+slider.setMinimum (0)
+slider.setMaximum (100)
+value = slider.value ()
+8
+QProgressBar
+QProgressBar  = işlem  ilerleme  göstergesi
+Kullanım  alanları :
+•Dosya indirme
+•Veri işleme
+•Yükleme  ekranı
+Örnek:
+progress = QProgressBar ()
+progress.setValue (50)
+9
+Girdi  Doğrulama
+Konular :
+oQt Validator Kullanımı
+oQIntValidator
+oQDoubleValidator
+oQRegularExpressionValidator
+Qt Validator Kullanımı
+Qt Validator, kullanıcıların  yanlış  veri girmesini  önlemek  için kullanılır .
+Validator sayesinde :
+•Sadece  belirli  türde  veri girilebilir
+•Hatalı  girişler  azaltılır
+•Kullanıcı  doğru  biçime  yönlendirilir
+•Formlar  daha  güvenli  ve kullanışlı  hale gelir
+Qt içinde  en sık kullanılan  validator türleri :
+•QIntValidator
+•QDoubleValidator
+•QRegularExpressionValidator
+11
+QIntValidator
+Kullanıcının  sadece  tam sayı girmesine  izin verir.
+from PySide6.QtWidgets import QApplication , QLineEdit
+from PySide6.QtGui import QIntValidator
+line_edit  = QLineEdit ()
+validator = QIntValidator (0, 100)
+line_edit.setValidator (validator)
+Bu örnekte  kullanıcı  sadece  0 ile 100 arasında  tam sayı girebilir .
+Geçerli  örnekler :
+•0
+•25
+Geçersiz  örnekler :
+•abc
+•150
+12
+QDoubleValidator
+Kullanıcının  ondalıklı  sayı girmesine  izin verir.
+from PySide6.QtWidgets import QApplication , QLineEdit
+from PySide6.QtGui import QDoubleValidator
+line_edit  = QLineEdit ()
+validator = QDoubleValidator (0.0, 100.0, 2)
+line_edit.setValidator (validator)
+Parametreler :
+minimum değer : 0.0
+maksimum  değer : 100.0
+ondalık  basamak  sayısı : 2
+13
+QDoubleValidator
+Geçerli  örnekler :
+10.5
+23.75
+Geçersiz  örnekler :
+abc
+12.345
+14
+QRegularExpressionValidator
+Belirli  bir kurala  göre  giriş yapılmasını  sağlar .
+Örneğin  sadece  e-posta  benzeri  bir yapı  kabul  ettirebiliriz :
+from PySide6.QtWidgets import QLineEdit
+from PySide6.QtGui import QRegularExpressionValidator
+from PySide6.QtCore import QRegularExpression
+line_edit  = QLineEdit ()
+regex = QRegularExpression (r"^[a -zA-Z0-9._%+ -]+@[a -zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
+validator = QRegularExpressionValidator (regex)
+line_edit.setValidator (validator)
+Bu yapı  e-posta  kontrolü  için temel  bir örnektir .
+15
+QRegularExpressionValidator
+Geçerli  örnekler :
+•ali@gmail.com
+•test123@yahoo.com
+Geçersiz  örnekler :
+•ali@
+•Abc123
+Validator Kullanmanın  Avantajları :
+•Hatalı  veri girişini  daha  en başta  azaltır
+•Kullanıcıyı  doğru  formata  yönlendirir
+•Kodun  içinde  ekstra  kontrol  yükünü  azaltır
+•Formların  daha  profesyonel  görünmesini  sağlar
+16
+QRegularExpressionValidator
+Önemli  Not
+Validator kullanılsa  bile bazen  ek kontrol  gerekir .
+Örneğin  alan  boş mu diye ayrıca  kontrol  edebiliriz :
+if line_edit.text () == "":
+ print("Bu alan  boş bırakılamaz .")
+Çünkü  validator, her durumda  tüm iş kurallarını  tek başına  çözmez .
+17
+Temel UX
+Konular :
+oTemel UX Kuralları
+Temel UX Kuralları
+UX (User Experience), kullanıcının  bir uygulamayı  kullanırken  yaşadığı  genel  deneyimi  
+ifade  eder .
+İyi bir kullanıcı  deneyimi :
+•Kullanıcıyı  yormaz
+•Arayüzü  kolay  anlaşılırdır
+•Kullanıcı  ne yapacağını  hızlıca  anlar
+•Hatalar  kolayca  fark edilir  ve düzeltilir
+GUI uygulamalarında  amaç :
+Kullanıcının  mümkün  olan  en az çabayla  işini yapabilmesidir .
+19
+Temel UX Kuralları
+Gereksiz  Widget Kullanma
+Arayüzde  çok fazla  bileşen  olması  kullanıcıyı  karıştırır .
+Kötü  örnek :
+•Çok sayıda  buton
+•Aynı işi yapan  farklı  seçenekler
+İyi örnek :
+•Sadece  gerekli  kontroller
+•Temiz ve sade  arayüz
+Kural:
+Kullanıcı  aradığı  şeyi hızlıca  bulabilmeli .
+20
+Temel UX Kuralları
+Mantıklı  Gruplandırma  Yap
+Benzer ayarlar  veya  bilgiler  aynı yerde  gruplanmalıdır .
+Örnek ayarlar ekranı :
+•Hesap  Ayarları
+•Kullanıcı  adı
+•Email
+•Şifre
+•Dil
+Qt'de bunu  yapmak  için:
+•QGroupBox
+•QTabWidget
+•QFormLayout
+kullanılabilir .
+21
+Temel UX Kuralları
+Hataları  Kullanıcıya  Açık Göster
+Kullanıcı  bir hata  yaptığında :
+•neyin  yanlış  olduğunu
+•nasıl  düzelteceğini
+anlayabilmelidir .
+Kötü  örnek :
+Hata!
+İyi örnek :
+Email adresi  geçerli  değil .
+Qt'de şu yöntemler  kullanılabilir :
+•QMessageBox
+•alanın  rengini  değiştirme
+•hata  mesajı  label'ı
+22
+Temel UX Kuralları
+Tutarlı  Tasarım  Kullan
+Uygulamanın  tüm bölümlerinde :
+•butonlar
+•renkler
+aynı şekilde  kullanılmalıdır .
+Örnek:
+Eğer  Kaydet  butonu :
+•yeşil
+•sağ altta
+ise tüm sayfalarda  aynı yerde  ve aynı renkte  olmalıdır .
+Tutarlılık :
+•öğrenmeyi  hızlandırır
+•kullanıcıyı  rahat  hissettirir
+23
+Temel UX Kuralları
+Önemli  Butonları  Görünür  Yap
+Kullanıcı  en çok şu işlemleri  yapar :
+•Kaydet
+•Gönder
+•Devam
+•Sil
+Bu butonlar :
+•kolay  görünür
+•kolay  erişilebilir
+olmalıdır .
+Örnek:
+•Kaydet  butonu  büyük  ve belirgin  olabilir
+•Sil butonu  dikkat  çekici  ama güvenli  olmalıdır
+24

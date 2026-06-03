@@ -17,7 +17,7 @@ from PySide6.QtWidgets import (
     QLineEdit, QTextEdit, QMessageBox, QTableWidget,
     QTableWidgetItem, QHeaderView, QAbstractItemView
 )
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QFont, QColor
 
 from database import get_connection
@@ -91,6 +91,9 @@ class StudentPortalWindow(QMainWindow):
     Hafta 9: QMainWindow alt sınıfı olarak farklı bir pencere (QWidget).
     """
 
+    # main.py bu sinyali dinleyerek login ekranını yeniden açar
+    logout_requested = Signal()
+
     def __init__(self, student_id: int, student_name: str):
         super().__init__()
         self.student_id = student_id
@@ -136,7 +139,7 @@ class StudentPortalWindow(QMainWindow):
                 border: none; border-radius: 6px; font-size: 11px; font-weight: bold; }
             QPushButton:hover { background: #991b1b; }
         """)
-        logout_btn.clicked.connect(self.close)
+        logout_btn.clicked.connect(self._logout)
         tb_layout.addWidget(logout_btn)
         root.addWidget(topbar)
 
@@ -310,6 +313,12 @@ class StudentPortalWindow(QMainWindow):
                 item.setForeground(QColor("#1e293b"))
                 item.setTextAlignment(Qt.AlignCenter)
                 self.comp_table.setItem(r, c, item)
+
+    # ── Çıkış ───────────────────────────────────────────────────────
+    def _logout(self):
+        """Öğrenci panelinden çıkış: login ekranını aç, bu pencereyi kapat."""
+        self.logout_requested.emit()
+        self.close()
 
     # ── Şikayet dialog ──────────────────────────────────────────────
     def _open_complaint_dialog(self):

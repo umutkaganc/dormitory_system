@@ -1,0 +1,103 @@
+Görsel
+Programlama
+II
+BTS-302
+2Sinyal ve Slot Kullanımı
+1.Sinyaller ve Slotlar
+2.Özel Sinyal Yazımı
+Sinyaller ve Slotlar
+Konular:
+Sinyal ve Slot Nedir?
+Bazı Widget Sinyalleri
+Sinyaller ve Slotlar
+1.Sinyal ve Slot Nedir?
+Qt, olay-tabanlı programlama modelini kullanan frameworktür. Bu model,
+widgetların birbirleriyle iletişim kurmasını ve kullanıcı etkileşimlerine yanıt vermesini
+sağlayan sinyal ve slot kavramına dayanır. Olay-tabanlı programlama modeli, Qt'nin
+temel bir kavramıdır ve Qt uygulamalarının duyarlı ve etkileşimli olmasını sağlar.
+Geleneksel programlama modellerinde, uygulama normal akışta ilerler. Uygulama,
+ne yapacağını karar verir ve önceden belirlenmiş bir sırayla bir dizi talimatı yürütür.
+Ancak, olay-tabanlı programlama modelinde, uygulama dışından gelen olaylar
+tarafından yönetilir. Bu olaylar, kullanıcı etkileşimleri olabilir. Örneğin, buton tıklamaları
+veya klavyeden bir tuşa basmak olabilir.
+Qt içerisinde bu olay-tabanlı programlama sinyaller ve slotlar ile yapılır. Bir sinyal, bir
+widget tarafından bir olay meydana geldiğinde yayılan bir olaydır, Örneğin, bir
+buton tıklandığında veya bir metin alanı düzenlendiğinde widgetlar tarafından bunu
+bildiren bir sinyal yayılır. Daha sonra bu sinyale bir fonksiyon çalıştırarak karşılık vermek
+istediğimizde slotları kullanırız. Slotlar bu sinyallere bağlanarak olaya tepki verirler.
+Sinyal ve slot mekanizması bazı avantajlar sağlar, Bunlar:
+Yeniden kullanılabilirlik: Sinyal ve slot mekanizması, widget'leri ve diğer bileşenleri
+yeniden kullanılabilir şekilde tasarlamayı kolaylaştırır, çünkü farklı bağlamlarda farklı
+slot fonksiyonlarına bağlanabilirler.
+Esneklik: Sinyal ve slot mekanizması, yüksek derecede esneklik sağlar, çünkü
+widget'lerin birbirleriyle çeşitli şekillerde iletişim kurmasını sağlar.
+4
+Sinyaller ve Slotlar
+1.Bazı Widget Sinyalleri
+Aşağıda bazı widgetlar için yaydıkları sinyaller verilmiştir.
+QPushButton (Button)
+clicked(): Buton tıklandığında yayılır.
+pressed(): Butona tıklandığı zaman yayılır. Yayılması için kullanıcının tıklamayı
+bırakmasına gerek yoktur.
+released(): Butona tıklama bittikten sonra yayılır.
+QLineEdit (Tek Satır Metin Girdisi)
+QLineEdit (Tek Satırlı Metin Girişi)
+textChanged(str): Metin her değiştiğinde yayılır.
+textEdited(str): Kullanıcı doğrudan metni değiştirdiğinde yayılır (programatik
+değişikliklerde yayılmaz).
+returnPressed(): Kullanıcı Enter tuşuna bastığında yayılır.
+editingFinished(): Kullanıcı düzenlemeyi tamamladığında (Enter'a basarak veya odak
+kaybedildiğinde) yayılır.
+5
+Sinyaller ve Slotlar
+1.Bazı Widget Sinyalleri
+QRadioButton (Radyo Butonu)
+toggled(bool): Radyo butonunun seçili durumu değiştiğinde yayılır.
+QCheckBox (Onay Kutusu)
+toggled(bool): Onay kutusunun durumu değiştiğinde yayılır.
+stateChanged(int): Onay kutusunun durumu değiştiğinde yayılır (0=seçilmemiş,
+1=kısmen seçili, 2=seçili).
+QTextEdit (Çok Satırlı Metin Girişi)
+textChanged(): Metin değiştiğinde yayılır.
+cursorPositionChanged(): İmleç pozisyonu değiştiğinde yayılır.
+6
+Sinyaller ve Slotlar
+1.Bazı Widget Sinyalleri
+QComboBox (Açılır Menü)
+currentIndexChanged(int): Seçilen öğe değiştiğinde yayılır.
+currentTextChanged(str): Seçilen metin değiştiğinde yayılır.
+textActivated(str): Kullanıcı bir öğe seçtiğinde yayılır (programatik değişikliklerde
+yayılmaz).
+highlighted(int): Kullanıcı bir öğenin üzerine geldiğinde yayılır.
+QListWidget (Liste Görüntüleyici)
+itemClicked(QListWidgetItem): Bir liste öğesine tıklandığında yayılır.
+currentItemChanged(QListWidgetItem, QListWidgetItem): Seçili öğe değiştiğinde
+yayılır.
+7
+Özel Sinyal Yazımı
+Konular:
+Sinyal yazmak
+Sinyallerin Slota Bağlanması
+Sinyaller ve Slotlar
+1.Sinyal Yazmak
+Sinyal yazmak için ilk önce QObject sınıfından özellik miras alan bir sınıf yazmamız
+gerekmektedir. Bunu şöyle yapabiliriz:
+from PySide6.QtCore import QObject, Signal
+from PySide6.QtWidgets import QApplication, QWidget, QPushButton 
+class MyObject(QObject): 
+ my_signal = Signal(str) 
+ def emit_signal(self, text): 
+  self.my_signal.emit(text) 
+Yukarıdaki sınıfı yazdığımız kodlar içerisinden nesnenşn emit_signal fonksiyonuna
+göndermek istediğimiz parametre ile çağırabiliriz. Böylece parametre sinyali
+yakalamak istediğimiz fonskiyonda ulaşılabilir hale gelir.
+9
+Sinyaller ve Slotlar
+1.Sinyallerin Slota Bağlanması
+Yazılan sinyallerin bağlanması ilk önce bir fonksiyon yazmamız gerekiyor. Bu fonksiyon
+sinyalin algılanması durumunda çalıştırmak istediğimiz kodları barındırır. Buton
+tıklanmasına aşağıdaki gibi slot bağlanabilir:
+felf.ui.myButton.click.connect(myObject.emit_signal("test"))
+Daha öncesinden oluşturduğumuz sınıf ve onun nesnesi ile butona tıkladığımızda
+kendi yazdığımız sinyali uygulamamızda yayabiliriz.
+10

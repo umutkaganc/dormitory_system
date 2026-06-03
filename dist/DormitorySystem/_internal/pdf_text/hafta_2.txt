@@ -1,0 +1,109 @@
+Görsel
+Programlama
+II
+BTS-302
+2Qt Widgetlarına Giriş
+1. Widgetlar
+2. Kullanıcı Eylemlerine Tepki Verme
+
+Widgetlar
+Konular :
+oWidget Nedir?
+oQPushButton , QLineEdit , 
+QTextEdit , QLabel , 
+QCheckBox , 
+QRadioButton Widgetları
+Widgetlar
+1.Widget Nedir?
+Widget, birgrafik kullanıcı arayüzü (GUI) bileşenidir . Genellikle , birpencere veya bir
+diyalog kutusu içinde bulunan vekullanıcı ileetkileşime giren birbileşendir . Widget'lar , 
+kullanıcıların biruygulamayla etkileşime girmesine olanak tanıyan temel bileşenlerdir .
+Widget'lar , genellikle birveya daha fazla işlevi gerçekleştirmek içintasarlanır . Örneğin , 
+birdüğme (button) widget'ı , kullanıcıların bireylem gerçekleştirmesine olanak tanır . Bir 
+metin alanı (text field) widget'ı , kullanıcıların metin girmesine olanak tanır .
+Widget'lar , genellikle birGUI kütüphanesi veya çerçevesi tarafından sağlanır . 
+Örneğin , PyQt , Qt, wxWidgets gibiGUI kütüphaneleri , çeşitli widgetlar sağlar .
+4
+Widgetlar
+2.QPushButton, QLineEdit , QTextEdit , QLabel , QCheckBox , QRadioButton Widgetları
+PyQt tarafından sağlanan temel widgetları vardır . Bu widget'lar , herhangi birGUI 
+uygulamasının temel bileşenleri olup , kullanıcı arayüzleri oluşturmak içinkullanılır . 
+Aşağıdaki konuları kapsayacağız :
+QPushButton :Kullanıcı tarafından tıklanarak bireylem gerçekleştirmek içinkullanılan
+birdüğme . Bir düğme oluşturmayı , metnini ayarlamayı vetıklama olayına
+bağlanacak birfonksiyonu tanımlamayı öğreneceğiz .
+QLineEdit :Kullanıcı tarafından birsatır metin girmesine izinveren birmetin düzenleyici . 
+Bir metin düzenleyici oluşturmayı , metnini ayarlamayı vekullanıcı tarafından girilen
+metni almayı öğreneceğiz .
+QTextEdit :Kullanıcı tarafından birden fazla satır metin girmesine izinveren birmetin
+düzenleyici . Bir metin düzenleyici oluşturmayı , metnini ayarlamayı vekullanıcı
+tarafından girilen metni almayı öğreneceğiz .
+QLabel :Bir metin veya görüntü gösteren birwidget. Bir etiket oluşturmayı , metnini
+ayarlamayı öğreneceğiz .
+QCheckBox :Kullanıcı tarafından seçilebilen veya seçilemeyen bironay kutusu . Bir 
+onay kutusu oluşturmayı , metnini ayarlamayı veonay kutusunun durumunu almayı
+öğreneceğiz .
+QRadioButton :Kullanıcı tarafından seçilebilen birradyo düğmesi . Bir radyo düğmesi
+oluşturmayı , metnini ayarlamayı veradyo düğmesinin durumunu almayı öğreneceğiz .
+ 5
+Widgetlar
+2.QPushButton, QLineEdit , QTextEdit , QLabel , QCheckBox , QRadioButton Widgetları
+Widgetların bazı özellikleri fonksiyonları yardımıyla ayarlanabilir . QLabel içinyazı ve
+renk özelliklerini değiştirmek istersek aşağıdaki kullanımdaki gibifonksiyonları
+çağırabiliriz :
+label = QLabel ("Metin") # Label Objesi Oluşturuyoruz
+label.setText ("Yeni Metin") # Label Objesinin Metnini Değiştiriyoruz
+label.setStyleSheet ("color: blue;") # Label Objesinin İleride göreceğimiz stilayarını
+değiştiriyoruz .
+6
+Kullanıcı
+Eylemlerine Tepki
+Verme
+Konular :
+oWidget Sinyalleri
+oWidget Sinyallerine
+Fonksiyon Bağlama
+Kullanıcı Eylemlerine
+Tepki Verme
+1.Widget Sinyalleri
+Qt ortamında widgetlar tarafından sinyaller iletilir . Her birwidget içindaha fazla sinyal
+veözellik bulmak içinQt belgelerine başvurabilirsiniz .
+Qt widget'ları içinmevcut olan bazı sinyaller :
+QPushButton
+clicked(): Butona tıklandığında tetiklenir .
+toggled(): Butonun durumunun değişmesiyle tetiklenir .
+QLineEdit
+textChanged (str): Metin değiştiğinde tetiklenir .
+returnPressed (): Kullanıcı Enter tuşuna bastığında tetiklenir .
+QTextEdit
+textChanged (): Metin değiştiğinde tetiklenir .
+cursorPositionChanged (): İmleç pozisyonu değiştiğinde tetiklenir .
+8
+Kullanıcı Eylemlerine
+Tepki Verme
+1.Widget Sinyalleri
+Qt ortamında widgetlar tarafından sinyaller iletilir . Qt widget'ları içinmevcut olan bazı
+sinyaller :
+QLabel
+QLabel genellikle sinyal göndermez , ancak QWidget sınıfından türediği içinbazı
+genel sinyalleri vardır :
+destroyed(): Widget yok edildiğinde tetiklenir .
+customContextMenuRequested (pos): Özel birbağlam menüsü isteği olduğunda
+tetiklenir .
+QCheckBox
+stateChanged (state): Onay kutusunun durumu değiştiğinde tetiklenir (0: Unchecked, 
+1: Partially Checked, 2: Checked).
+toggled(checked): Onay kutusu durumunun değiştiğinde tetiklenir .
+QRadioButton
+toggled(checked): Radyo düğmesinin durumu değiştiğinde tetiklenir .
+9
+Kullanıcı Eylemlerine
+Tepki Verme
+2.Widget Sinyallerine Fonksiyon Bağlama
+Program genelinde iletilen sinyallere tepkileri fonksiyonlar ileveriyoruz . Yazdığımız
+fonksiyonları widget sinyallerine bağlamamız gerekmektedir .
+Sinyallere fonksiyon widget objesi üzerinden bağlanır . Örnek kullanım :
+button.clicked.connect (self.onButtonClick )
+Yukarıdaki örnekte gözüktüğü üzere widget objesinden sinyale fonksiyon bağlanırken
+"connect" fonksiyonu kullanılır .
+10

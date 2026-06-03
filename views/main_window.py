@@ -304,8 +304,10 @@ class MainWindow(QMainWindow):
 
     def _logout(self):
         from views.login_view import LoginView
+        from views.student_portal import StudentPortalWindow
         self.login = LoginView()
         self.login.login_success.connect(self._reopen)
+        self.login.student_login_success.connect(self._reopen_student)
         self.login.show()
         self.close()
 
@@ -313,3 +315,25 @@ class MainWindow(QMainWindow):
         self.new_win = MainWindow(username, role)
         self.new_win.show()
         self.login.close()
+
+    def _reopen_student(self, student_id, student_name):
+        from views.student_portal import StudentPortalWindow
+        from PySide6.QtWidgets import QMessageBox
+        try:
+            self.new_win = StudentPortalWindow(student_id, student_name)
+
+            def on_student_logout():
+                from views.login_view import LoginView
+                new_login = LoginView()
+                new_login.login_success.connect(lambda u, r: (MainWindow(u, r).show(), new_login.close()))
+                new_login.student_login_success.connect(lambda sid, sname: self._reopen_student(sid, sname))
+                new_login.show()
+                # Referansı tutmak için _logout sırasında oluşan new_login'i de saklamalıyız
+                self.login = new_login
+
+            self.new_win.logout_requested.connect(on_student_logout)
+            self.new_win.show()
+            self.login.close()
+        except Exception as e:
+            QMessageBox.critical(self.login, "Hata", f"Öğrenci paneli açılamadı:\n{e}")
+

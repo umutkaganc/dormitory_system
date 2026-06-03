@@ -1,0 +1,98 @@
+Görsel
+Programlama
+II
+BTS-302
+2QMainWindow  ve Menü
+Yapısı
+1. QMainWindow  
+3. Menü  Çubuğu
+4. Araç Çubuğu2. QAction
+Durum Çubuğu 5.
+QMainWindow
+Konular :
+oQMainWindow  Nedir?
+oQMainWindow Yapısı
+QMainWindow  Nedir?
+Qt’de ana uygulama  penceresidir
+Standart  bir yapı  sunar :
+•Menü  çubuğu
+•Araç  çubuğu
+•Durum çubuğu
+•Merkezi  widget alanı
+QWidget’e  göre  daha  gelişmiştir
+4
+QMainWindow  Yapısı
+setCentralWidget () -> ana içerik
+menuBar () -> menü
+addToolBar () ->araç  çubuğu
+statusBar () -> alt bilgi alanı
+5
+MenüÇubuğu
+(Menu Bar) 
+Konular :
+oMenü  Çubuğu Nasıl  
+Oluşturulur ?
+oKod Örne ği
+Menü  Çubuğu  (Menu Bar)
+Menü  çubuğu , uygulamanın  üst kısmında  yer alır.
+Örnek:
+•Dosya (File)
+•Düzenle  (Edit)
+•Yardım (Help)
+7
+Kod  Örneği
+menubar  = self.menuBar ()
+file_menu  = menubar.addMenu ("Dosya")
+open_action  = QAction ("Aç", self)
+exit_action  = QAction ("Çıkış ", self)
+file_menu.addAction (open_action )
+file_menu.addAction (exit_action )
+8
+QAction
+Konular :
+oQAction  Nedir?
+oKod Örneği
+QAction  Nedir?
+Menü  ve araç  çubuğunda  kullanılan  komut  nesnesidir
+Tek bir action, birden  fazla  yerde  kullanılabilir
+Özellikleri :
+•Metin
+•İkon
+•Kısayol  (Shortcut)
+•Tetiklenen  olay (triggered)
+10
+Kod  Örneği
+exit_action  = QAction ("Çıkış ", self)
+exit_action.setShortcut ("Ctrl+Q ")
+exit_action.triggered.connect (self.close )
+11
+Araç  Çubuğu
+(Toolbar)
+Konular :
+oAraç  Çubuğu  Yapısı
+oKod Örne ği
+Araç  Çubuğu  (Toolbar)
+•Araç  çubuğu , kullanıcıya  en sık kullanılan  işlemlere  hızlı erişim  sağlar
+•Menüye  gitmeden  tek tıklamayla  işlem  yapılmasına  olanak  tanır
+•Genellikle  ikon + kısa açıklama  (tooltip) içerir
+•Kullanıcı  deneyimini  (UX) ciddi  şekilde  iyileştirir
+13
+Kod  Örneği
+toolbar = self.addToolBar ("Ana Araçlar ")
+toolbar.addAction (open_action )
+toolbar.addAction (exit_action )
+14
+Durum Çubuğu
+(Status bar)
+Konular :
+oDurum Çubuğu  Yapısı
+oKod Örneği
+Durum Çubuğu  
+(Status bar)
+•Durum çubuğu , uygulamanın  en alt kısmında  yer alan  bilgi alanıdır
+•Kullanıcıya  uygulamanın  mevcut  durumu  hakkında  anlık  geri bildirim  verir
+•Genellikle  kısa ve geçici  mesajlar  gösterir
+16
+Kod  Örneği
+self.statusBar ().showMessage ("Hazır ")
+17

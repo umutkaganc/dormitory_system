@@ -1,0 +1,90 @@
+Görsel
+Programlama
+II
+BTS-302
+2Stil ve Kullanıcı  Deneyimi
+1. Qt Style Sheet
+3. İkonlar  veKaynaklar2. Tema Kavramı
+
+Qt Style Sheet
+Konular :
+oQSS Nedir?
+oQSS Sözdizimi ( Syntax )
+oDinamik Durumlar ( Pseudo -
+States )
+QSS Nedir ?
+Qt Style Sheets, HTML dünyasındaki  CSS (Cascading Style Sheets) yapısının  
+Qtwidget’larına  uyarlanmış  halidir .
+Avantajları :
+•Kod yazmadan  arayüz  tasarımını  özelleştirme  imkanı  sağlar .
+•Görsel  tasarımı  mantıksal  koddan  ayırır .
+•Uygulamanın  her işletim  sisteminde  aynı (tutarlı ) görünmesini  sağlar .
+4
+QSS Sözdizimi (Syntax)
+Temel Yapı :
+Seçici  { özellik : değer ; }
+Örnek:
+QPushButton  {
+ background -color: blue;
+ color: white;
+ border -radius: 5px;
+}
+Sözdizimi  Bileşenleri :
+Selector ( Seçici ): Stil uygulanacak  widget (Örn: QLabel ).
+Property ( Özellik ): Değiştirilecek  nitelik  (Örn: font -size).
+Value (Değer): Atanan  yeni değer  (Örn: 14px).
+5
+Dinamik  Durumlar
+(Pseudo -States)
+Widget’ların  farklı  durumlarına  göre  (üzerine  gelme , tıklama  vb.) farklı  stiller 
+tanımlanabilir .
+Sık Kullanılan  Durumlar :
+•:hover -> Fare üzerine  geldiğinde .
+•:pressed -> Butona  basıldığında .
+•:disabled -> Widget devre  dışı bırakıldığında .
+•:checked -> Checkbox veya  RadioButton  seçili  olduğunda .
+Örnek:
+QPushButton:hover  { background -color: darkblue ; }
+6
+Tema Kavramı
+Konular :
+oQt Stilleri
+oStil Uygulama  Yöntemleri
+Qt Stilleri
+Qt, çalıştığı  işletim  sistemine  göre  (Windows, macOS, Linux) varsayılan  bir stil kullanır . 
+Ancak  bu manuel  olarak  değiştirilebilir .
+Popüler  Yerleşik  Stiller:
+Fusion: Platform bağımsız , modern ve temiz  görünüm .
+Windows / WindowsVista : Klasik  Windows görünümü .
+8
+Stil Uygulama  Yöntemleri
+Uygulama  Geneline  Uygulama :
+app = QApplication ([])
+app.setStyleSheet ("QPushButton  { color: red; }")
+Tek Bir Widget’a  Uygulama :
+buton  = QPushButton ("Tıkla")
+buton.setStyleSheet ("background -color: yellow;")
+9
+İkonlar  ve Kaynaklar  
+(Resources)
+Konular :
+oNeden  Kaynak Dosyası  
+Kullanılır ?
+oKaynak Yönetimi  Süreci
+Neden  Kaynak Dosyası  
+Kullanılır ?
+Problem:
+Uygulamada  kullanılan  resimler , ikonlar  veya  yazı tipleri  dışarıdan  dosya  yoluyla  
+çağrılırsa , dosya  silindiğinde  uygulama  bozulur .
+Çözüm :
+Dosyaları  uygulama  içerisine  (binary olarak ) gömen  .qrc (Qt Resource Collection) 
+sistemi  kullanılır .
+11
+Kaynak Yönetimi  Süreci
+Dosya Hazırlığı : .qrc uzantılı  bir XML dosyası  oluşturulur .
+Derleme : PySide6/ PyQt  kullanılıyorsa , bu dosya  Python koduna  çevrilir :
+pyside6 -rcc kaynaklar.qrc  -o kaynaklar_rc.py
+Kodda  Kullanım :
+import kaynaklar_rc
+button.setIcon (QIcon (":/icons/ settings.svg "))
+12
